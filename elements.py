@@ -47,6 +47,7 @@ def main():
     content = response.content
 
     soup = BeautifulSoup(content, 'html.parser')
+    print(soup)
     links = soup.find_all('a', href=lambda href: href and href.startswith("?action=register"))
 
     if links:
