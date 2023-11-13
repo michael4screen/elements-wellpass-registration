@@ -45,6 +45,7 @@ def main():
     response = session.get(SHEET_URL)
     response.raise_for_status()
     content = response.content
+    print(content)
 
     soup = BeautifulSoup(content, 'html.parser')
     links = soup.find_all('a', href=lambda href: href and href.startswith("?action=register"))
